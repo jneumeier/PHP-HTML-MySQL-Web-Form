@@ -1,6 +1,7 @@
 <?php
 
 	session_start();
+	require 'database.php';
 ?>
 
 <html>
@@ -12,45 +13,59 @@
 		<?php
 			# pull variables from entry form
 			$formDate =  $_POST["formDate"];
-			$txtTeam1 =  $_POST["txtTeam1"];
-			$txtTeam2 =  $_POST["txtTeam2"];
-			$txtTeam3 = $_POST["txtTeam3"];
-			$txtTeam4 =  $_POST["txtTeam4"];
-			$txtTeam5 = $_POST["txtTeam5"];
-			$txtTeam6 =  $_POST["txtTeam6"];
-			$txtTeam7 = $_POST["txtTeam7"];
-			$txtTeam8 = $_POST["txtTeam8"];
-			$txtTeam9 =  $_POST["txtTeam9"];
-			$txtTeam10 = $_POST["txtTeam10"];
+			$txtTeam =  $_POST["txtTeam"];
+			$txtPlayer1 =  $_POST["txtPlayer1"];
+			$txtPlayer2 =  $_POST["txtPlayer2"];
+			$txtPlayer3 = $_POST["txtPlayer3"];
+			$txtPlayer4 =  $_POST["txtPlayer4"];
+			$txtPlayer5 = $_POST["txtPlayer5"];
+			$txtPlayer6 =  $_POST["txtPlayer6"];
+			$txtPlayer7 = $_POST["txtPlayer7"];
+			$txtPlayer8 = $_POST["txtPlayer8"];
+			$txtPlayer9 =  $_POST["txtPlayer9"];
+			$txtPlayer10 = $_POST["txtPlayer10"];
 			
 			# put variables into an array
-			$arrTeams = array($txtTeam1, $txtTeam2, $txtTeam3, $txtTeam4, $txtTeam5, $txtTeam6, $txtTeam7, $txtTeam8, $txtTeam9, $txtTeam10);
+			$arrPlayers = array($txtPlayer1, $txtPlayer2, $txtPlayer3, $txtPlayer4, 
+								$txtPlayer5, $txtPlayer6, $txtPlayer7, $txtPlayer8, 
+								$txtPlayer9, $txtPlayer10);
 			
+			
+			# MySQL database updates (methods contained in database.php)
+			updateTeamsTable($txtTeam);			
+			updatePlayersTable($arrPlayers, $txtTeam);
+			
+					
+			# output to user
 			# create variables for For loop functioning
 			$intIndex = 0;
-			$arrlength = count($arrTeams);
+			$arrlength = count($arrPlayers);
 			
-			# output to user
+			# print to user
 			echo "Form Date:  " . $formDate;
+			echo "<br><br>";
+			
+			echo "Team Name:  " . $txtTeam;
 			echo "<br><br>";
 			
 			for($intIndex = 0; $intIndex < $arrlength; $intIndex++)
 			{
-			  echo "Baseball Team #" . ($intIndex + 1) . " is the " . $arrTeams[$intIndex];
+			  echo "Team Player #" . ($intIndex + 1) . " is the " . $arrPlayers[$intIndex];
 			  echo "<br><br>";
 			}		
 
 			$_SESSION["formDate"] = $formDate;
-			$_SESSION["txtTeam1"] = $txtTeam1;
-			$_SESSION["txtTeam2"] = $txtTeam2;
-			$_SESSION["txtTeam3"] = $txtTeam3;
-			$_SESSION["txtTeam4"] = $txtTeam4;
-			$_SESSION["txtTeam5"] = $txtTeam5;
-			$_SESSION["txtTeam6"] = $txtTeam6;
-			$_SESSION["txtTeam7"] = $txtTeam7;
-			$_SESSION["txtTeam8"] = $txtTeam8;
-			$_SESSION["txtTeam9"] = $txtTeam9;
-			$_SESSION["txtTeam10"] = $txtTeam10;
+			$_SESSION["txtTeam"] = $txtTeam;
+			$_SESSION["txtPlayer1"] = $txtPlayer1;
+			$_SESSION["txtPlayer2"] = $txtPlayer2;
+			$_SESSION["txtPlayer3"] = $txtPlayer3;
+			$_SESSION["txtPlayer4"] = $txtPlayer4;
+			$_SESSION["txtPlayer5"] = $txtPlayer5;
+			$_SESSION["txtPlayer6"] = $txtPlayer6;
+			$_SESSION["txtPlayer7"] = $txtPlayer7;
+			$_SESSION["txtPlayer8"] = $txtPlayer8;
+			$_SESSION["txtPlayer9"] = $txtPlayer9;
+			$_SESSION["txtPlayer10"] = $txtPlayer10;
 		?>
 
 		<a href="FootballForm.php" target="_self">Modify Data</a> <br>

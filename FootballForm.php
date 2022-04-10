@@ -5,7 +5,7 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>Football Team Entry Form</title>
+		<title>Football Player Entry Form</title>
 	</head>
 	<body>
 		<br>
@@ -18,53 +18,58 @@
 							echo $date->value(new DateTime())->render(); -->
 				</tr>
 				<tr>
-					<td>NFL Team #1:</td>
-					<td> <input type="text" value="<?php echo $_SESSION["txtTeam1"] ?>" name="txtTeam1"></td>
+					<td>NFL Team:</td>
+					<td> <input type="text" value="<?php echo $_SESSION["txtTeam"] ?>" name="txtTeam"></td>
 					</td>
 				</tr>
 				<tr>
-					<td>NFL Team #2:</td>
-					<td> <input type="text" value="<?php echo $_SESSION["txtTeam2"] ?>" name="txtTeam2"></td>
+					<td>NFL Player #1:</td>
+					<td> <input type="text" value="<?php echo $_SESSION["txtPlayer1"] ?>" name="txtPlayer1"></td>
 					</td>
 				</tr>
 				<tr>
-					<td>NFL Team #3:</td>
-					<td> <input type="text" value="<?php echo $_SESSION["txtTeam3"] ?>" name="txtTeam3"></td>
+					<td>NFL Player #2:</td>
+					<td> <input type="text" value="<?php echo $_SESSION["txtPlayer2"] ?>" name="txtPlayer2"></td>
 					</td>
 				</tr>
 				<tr>
-					<td>NFL Team #4:</td>
-					<td> <input type="text" value="<?php echo $_SESSION["txtTeam4"] ?>" name="txtTeam4"></td>
+					<td>NFL Player #3:</td>
+					<td> <input type="text" value="<?php echo $_SESSION["txtPlayer3"] ?>" name="txtPlayer3"></td>
 					</td>
 				</tr>
 				<tr>
-					<td>NFL Team #5:</td>
-					<td> <input type="text" value="<?php echo $_SESSION["txtTeam5"] ?>" name="txtTeam5"></td>
+					<td>NFL Player #4:</td>
+					<td> <input type="text" value="<?php echo $_SESSION["txtPlayer4"] ?>" name="txtPlayer4"></td>
 					</td>
 				</tr>
 				<tr>
-					<td>NFL Team #6:</td>
-					<td> <input type="text" value="<?php echo $_SESSION["txtTeam6"] ?>" name="txtTeam6"></td>
+					<td>NFL Player #5:</td>
+					<td> <input type="text" value="<?php echo $_SESSION["txtPlayer5"] ?>" name="txtPlayer5"></td>
 					</td>
 				</tr>
 				<tr>
-					<td>NFL Team #7:</td>
-					<td> <input type="text" value="<?php echo $_SESSION["txtTeam7"] ?>" name="txtTeam7"></td>
+					<td>NFL Player #6:</td>
+					<td> <input type="text" value="<?php echo $_SESSION["txtPlayer6"] ?>" name="txtPlayer6"></td>
 					</td>
 				</tr>
 				<tr>
-					<td>NFL Team #8:</td>
-					<td> <input type="text" value="<?php echo $_SESSION["txtTeam8"] ?>" name="txtTeam8"></td>
+					<td>NFL Player #7:</td>
+					<td> <input type="text" value="<?php echo $_SESSION["txtPlayer7"] ?>" name="txtPlayer7"></td>
 					</td>
 				</tr>
 				<tr>
-					<td>NFL Team #9:</td>
-					<td> <input type="text" value="<?php echo $_SESSION["txtTeam9"] ?>" name="txtTeam9"></td>
+					<td>NFL Player #8:</td>
+					<td> <input type="text" value="<?php echo $_SESSION["txtPlayer8"] ?>" name="txtPlayer8"></td>
 					</td>
 				</tr>
 				<tr>
-					<td>NFL Team #10:</td>
-					<td> <input type="text" value="<?php echo $_SESSION["txtTeam10"] ?>" name="txtTeam10"></td>
+					<td>NFL Player #9:</td>
+					<td> <input type="text" value="<?php echo $_SESSION["txtPlayer9"] ?>" name="txtPlayer9"></td>
+					</td>
+				</tr>
+				<tr>
+					<td>NFL Player #10:</td>
+					<td> <input type="text" value="<?php echo $_SESSION["txtPlayer10"] ?>" name="txtPlayer10"></td>
 					</td>
 				</tr>
 				
