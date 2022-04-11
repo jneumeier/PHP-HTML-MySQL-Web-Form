@@ -20,7 +20,7 @@ How To Run:
 About This Program:
 *********************
 
-Text-and-date form that saves entries with PHP, displays the entries to the user with PHP, saves them as session variables, and all entries are stored in a MySQL database. JavaScript is used to adjust how many textboxes are shown in the main form.
+This is a web form that saves entries with PHP and MySQL, and displays the entries to the user with PHP in conjunction with MySQL database calls. JavaScript JQuery is used to make the main form dynamic.
 
 
 *********************
