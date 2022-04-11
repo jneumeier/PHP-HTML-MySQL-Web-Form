@@ -91,7 +91,7 @@
 				
 			} else {
 				
-				echo "Team already exists!!! <br>";
+				echo "The " . $txtTeam . " already exist. Adding players to this team. <br>";
 			}		
 		}
 		
@@ -180,6 +180,12 @@
 		
 		// perform search actions for each player in the given array
 		for($intIndex = 0; $intIndex < count($arrPlayers); $intIndex++) {
+			
+			// break from for loop if current player is empty (no others are expected after it, too)
+			if($arrPlayers[$intIndex] == "") {
+				
+				break;
+			}
 			
 			// create and run search query for the given player, and, save query result in variable
 			$checkIfPlayerExists = $conn->query("SELECT * FROM TPlayers WHERE strFullName = '" . $arrPlayers[$intIndex] . "'");

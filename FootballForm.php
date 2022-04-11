@@ -1,16 +1,22 @@
 <?php
 	session_start();
+	require 'styles.css';
 ?>
 
+
+
 <html>
+
 	<head>
 		<meta charset="utf-8">
-		<title>Football Player Entry Form</title>
+		<title>Football Player Entry Form</title>			
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>		
 	</head>
-	<body>
-		<br>
+	
+	<body>	
+		<br>		
 		<form action="process_blank.php" method="post">
-			<table border=1>
+			<table class="playerInputTable" border=1>
 				<tr>
 					<td width= 50% >Form Date:</td>
 					<td>  <input type="date" value="<?php echo $_SESSION["formDate"] ?>" name="formDate" id="formDate" class="datePicker">
@@ -23,60 +29,63 @@
 					</td>
 				</tr>
 				<tr>
-					<td>NFL Player #1:</td>
-					<td> <input type="text" value="<?php echo $_SESSION["txtPlayer1"] ?>" name="txtPlayer1"></td>
-					</td>
+					<td>Player #1:</td>
+					<td> <input type="text" name="txtPlayer1"></td>
+					<td align="center" colspan=1><button class="btn add-btn">Add More</button></td>
 				</tr>
+			</table>
+			
+			<table style="width:478px" border=1>
 				<tr>
-					<td>NFL Player #2:</td>
-					<td> <input type="text" value="<?php echo $_SESSION["txtPlayer2"] ?>" name="txtPlayer2"></td>
-					</td>
-				</tr>
-				<tr>
-					<td>NFL Player #3:</td>
-					<td> <input type="text" value="<?php echo $_SESSION["txtPlayer3"] ?>" name="txtPlayer3"></td>
-					</td>
-				</tr>
-				<tr>
-					<td>NFL Player #4:</td>
-					<td> <input type="text" value="<?php echo $_SESSION["txtPlayer4"] ?>" name="txtPlayer4"></td>
-					</td>
-				</tr>
-				<tr>
-					<td>NFL Player #5:</td>
-					<td> <input type="text" value="<?php echo $_SESSION["txtPlayer5"] ?>" name="txtPlayer5"></td>
-					</td>
-				</tr>
-				<tr>
-					<td>NFL Player #6:</td>
-					<td> <input type="text" value="<?php echo $_SESSION["txtPlayer6"] ?>" name="txtPlayer6"></td>
-					</td>
-				</tr>
-				<tr>
-					<td>NFL Player #7:</td>
-					<td> <input type="text" value="<?php echo $_SESSION["txtPlayer7"] ?>" name="txtPlayer7"></td>
-					</td>
-				</tr>
-				<tr>
-					<td>NFL Player #8:</td>
-					<td> <input type="text" value="<?php echo $_SESSION["txtPlayer8"] ?>" name="txtPlayer8"></td>
-					</td>
-				</tr>
-				<tr>
-					<td>NFL Player #9:</td>
-					<td> <input type="text" value="<?php echo $_SESSION["txtPlayer9"] ?>" name="txtPlayer9"></td>
-					</td>
-				</tr>
-				<tr>
-					<td>NFL Player #10:</td>
-					<td> <input type="text" value="<?php echo $_SESSION["txtPlayer10"] ?>" name="txtPlayer10"></td>
-					</td>
-				</tr>
-				
-				<tr>
-					<td align="center" colspan=2><input type="submit"></td>
+					<td align="center" colspan=3><input type="submit" class="btn" value="Submit"></td>
 				</tr>
 			</table>
 		</form>
+		
+		
+		<script type="text/javascript">
+		
+			$(document).ready(function () {
+		 
+				// allowed maximum input fields
+				var intMaxInput = 10;
+
+				// initialize the counter for textbox
+				var intIndex = 1;
+
+				// handle click event on Add More button
+				$('.add-btn').click(function (e) {
+				  
+					e.preventDefault();
+
+					// if counter is less than max allowed inputs, then create another input
+					if (intIndex < intMaxInput) {
+						
+						intIndex++; // increment the counter
+						
+						// add input field
+						$('.playerInputTable').append(`
+							<tr>
+								<td>Player #` + intIndex + `:</td>
+								<td><input type="text" name="txtPlayer` + intIndex + `"> </td>
+								<td align="center" class="remove-lnk"><button class="btn">Remove</button></td>						
+							</tr>				
+						`);
+					}
+				});
+
+				// handle click event of the remove link
+				$('.playerInputTable').on("click", ".remove-lnk", function (e) {
+					
+					e.preventDefault();
+					
+					$(this).parent('tr').remove();  // remove input field
+					
+					intIndex--; // decrement the counter
+				})		 
+			});
+			
+		</script>
+		
 	</body>
 </html> 
