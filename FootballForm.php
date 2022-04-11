@@ -37,7 +37,10 @@
 			
 			<table style="width:478px" border=1>
 				<tr>
-					<td align="center" colspan=3><input type="submit" class="btn" value="Submit"></td>
+					<td align="center" colspan=3>
+						<input type="submit" class="btn" value="Submit">
+						<button type="submit" class="btn" formaction="displayPlayers.php">View Player Database</button>
+					</td>
 				</tr>
 			</table>
 		</form>

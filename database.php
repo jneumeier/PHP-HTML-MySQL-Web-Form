@@ -184,7 +184,7 @@
 			// break from for loop if current player is empty (no others are expected after it, too)
 			if($arrPlayers[$intIndex] == "") {
 				
-				break;
+				continue;
 			}
 			
 			// create and run search query for the given player, and, save query result in variable
@@ -229,5 +229,47 @@
 			
 		// close connection
 		$conn->close();	
+	}
+	
+	
+	
+	// ------------------------------------------------------------------------------------
+	// Name: getTeamsAndPlayers
+	// Abstract: Retrieves a MySQL query that has players ordered by their team, then by
+	//			 their name.
+	// ------------------------------------------------------------------------------------
+	function getTeamsAndPlayers() {
+		
+		// create database credentials
+		$hostname = "sql105.epizy.com";
+		$username = "epiz_31480832";
+		$password = "rwvAosemnWwMFr";
+		$dbname = "epiz_31480832_jonfoto";
+
+		// Create connection
+		$conn = new mysqli($hostname, $username, $password, $dbname);
+		
+		// Check connection
+		if ($conn->connect_error) {
+		  die("Connection failed: " . $conn->connect_error);
+		}
+		
+		// ---------------------------------------------------------------
+		// Query for Teams and their Players
+		
+		//if query fails stop further execution and show mysql error
+		$query = $conn->query("SELECT TPlayers.strFullName, TTeams.strTeamName
+							  FROM TPlayers JOIN TTeams
+							  ON TPlayers.intTeamID = TTeams.intTeamID
+							  ORDER BY TTeams.strTeamName, TPlayers.strFullName")
+				or die(mysql_error());
+		 
+		// close connection
+		$conn->close();	
+		 
+		//if we get no results return -1
+		if($query->num_rows <= 0) { $query = -1; }
+		
+		return $query;	
 	}
 ?> 

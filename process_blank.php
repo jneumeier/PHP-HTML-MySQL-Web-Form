@@ -53,7 +53,7 @@
 				// break from for loop if current player is empty (no others are expected after it, too)
 				if($arrPlayers[$intIndex] == "") {
 					
-					break;
+					continue;
 				}
 				
 				echo "Team Player #" . ($intIndex + 1) . " is " . $arrPlayers[$intIndex];
