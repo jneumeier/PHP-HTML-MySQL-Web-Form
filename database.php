@@ -6,7 +6,7 @@
 	// ------------------------------------------------------------------------------------
 	
 	
-
+	
 	
 	// ------------------------------------------------------------------------------------
 	// Name: updateTeamsTable
@@ -66,7 +66,7 @@
 			if ($checkIfTeamExists->num_rows == 0) {
 			
 				// count the number of records already in TTeams
-				$sql = "SELECT COUNT(intTeamID) AS NumberOfTeams FROM TTeams";
+				$sql = "SELECT MAX(intTeamID) AS NumberOfTeams FROM TTeams";
 				$result = $conn->query($sql);
 				if ($result->num_rows > 0) {
 					$row = $result->fetch_assoc();
@@ -197,7 +197,7 @@
 				if ($checkIfPlayerExists->num_rows == 0) {
 				
 					// count the number of records already in TPlayers to find new primary key possibility
-					$sql = "SELECT COUNT(intPlayerID) AS NumberOfPlayers FROM TPlayers";
+					$sql = "SELECT MAX(intPlayerID) AS NumberOfPlayers FROM TPlayers";
 					$result = $conn->query($sql);
 					if ($result->num_rows > 0) {
 						$row = $result->fetch_assoc();

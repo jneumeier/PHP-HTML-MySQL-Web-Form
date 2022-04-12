@@ -1,46 +1,58 @@
 <style>
 
-  body {
-    font-family: arial;
-    padding-left: 10px;
-  }
- 
-  .input-box {
-    margin: 15px 0;
-  }
- 
-  .input-box input {
-    padding: 5px 10px;
-    border-radius: 2px;
-    border: 1px solid #999;
-  }
- 
-  .btn {
-    cursor: pointer;
-    padding: 5px 10px;
-    border-radius: 2px;
-    border: 1px solid #17a2b8;
-    color: #fff;
-    background-color: #17a2b8;
-  }
- 
-  .btn:hover {
-    background-color: #138496;
-    border-color: #117a8b;
-  }
- 
-  .btn:focus {
-    outline: 0;
-  }
- 
-  .input-box a {
-    color: red;
-    font-size: 13px;
-    text-decoration: none;
-  }
- 
-  .input-box a:hover {
-    text-decoration: underline;
-  }
+	body {
+		font-family: arial;
+		padding-left: 10px;
+	}
+
+	.input-box {
+		margin: 15px 0;
+	}
+
+	.input-box input {
+		padding: 5px 10px;
+		border-radius: 2px;
+		border: 1px solid #999;
+	}
+
+	.btn {
+		cursor: pointer;
+		padding: 5px 10px;
+		border-radius: 2px;
+		border: 1px solid #17a2b8;
+		color: #fff;
+		background-color: #17a2b8;
+	}
+
+	.btn:hover {
+		background-color: #138496;
+		border-color: #117a8b;
+	}
+
+	.btn:focus {
+		
+	}
+
+	.input-box a {
+		color: red;
+		font-size: 13px;
+		text-decoration: none;
+	}
+
+	.input-box a:hover {
+		text-decoration: underline;
+	}
+	
+	.table-padding {
+		margin-top: 10px;
+		margin-bottom: 10px;
+		margin-left: 10px;
+		margin-right: 10px;
+	}
+	
+	#usa-gradient {
+		background-image: linear-gradient(to right, red , blue, white);
+	}
+}
   
 </style>
