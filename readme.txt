@@ -27,6 +27,4 @@ This is a web form that saves entries with PHP and MySQL, and displays the entri
 Planned New Features:
 *********************
 - Combo box for team entry that exists alongside the text input. Text input will be labeled as only for use for a new team to be added to the database.
-- Button on main form to go to another page displaying all teams with their respective players.
 - HTML form validation to require all empty player textboxes to be filled.
-- Functionality to add/remove player name entries on main form. 
