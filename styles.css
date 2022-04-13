@@ -6,7 +6,7 @@
 	}
 
 	.input-box {
-		margin: 15px 0;
+		margin: 5px ;
 	}
 
 	.input-box input {
@@ -16,6 +16,16 @@
 	}
 
 	.btn {
+		cursor: pointer;
+		padding: 5px 10px;
+		border-radius: 2px;
+		border: 1px solid #17a2b8;
+		color: #fff;
+		background-color: #17a2b8;
+		width: 80px;
+	}
+	
+	.btn-selections {
 		cursor: pointer;
 		padding: 5px 10px;
 		border-radius: 2px;

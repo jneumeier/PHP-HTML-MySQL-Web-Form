@@ -13,7 +13,6 @@
 		<?php
 			# pull variables from entry form
 			$formDate =  	$_POST["formDate"];
-			$txtTeam =  	$_POST["txtTeam"];
 			$txtPlayer1 =  	$_POST["txtPlayer1"];
 			$txtPlayer2 =  	$_POST["txtPlayer2"];
 			$txtPlayer3 = 	$_POST["txtPlayer3"];
@@ -24,6 +23,16 @@
 			$txtPlayer8 = 	$_POST["txtPlayer8"];
 			$txtPlayer9 =  	$_POST["txtPlayer9"];
 			$txtPlayer10 = 	$_POST["txtPlayer10"];
+			
+			# and finally, get the team name from one of the entry options
+			if($_POST["combo-box"] == "new-team") {
+				
+				$txtTeam = $_POST["txtTeam"];
+				
+			} else {
+			
+				$txtTeam = $_POST["combo-box"];
+			}	
 			
 			# put variables into an array
 			$arrPlayers = array($txtPlayer1, $txtPlayer2, $txtPlayer3, $txtPlayer4, 

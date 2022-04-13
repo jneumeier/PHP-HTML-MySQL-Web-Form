@@ -70,7 +70,7 @@
 				
 		
 		
-		<button class="btn" style="display: block;" onclick="window.location.href='FootballForm.php';">Return to Form</button>
+		<button class="btn-selections" style="display: block;" onclick="window.location.href='FootballForm.php';">Return to Form</button>
 		
 	</body>
 </html>
