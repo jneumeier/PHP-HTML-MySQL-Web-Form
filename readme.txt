@@ -3,7 +3,7 @@ WebForm - Readme
 *********************************************************
 
 Written by: 		John Neumeier
-Languages:		PHP/HTML/MySQL/JavaScript
+Languages:		PHP/HTML/MySQL/JavaScript/jQuery
 Started:		April 2022
 Current Version:	v0.1
 
@@ -26,5 +26,5 @@ This is a web form that saves entries with PHP and MySQL, and displays the entri
 *********************
 Planned New Features:
 *********************
-- Combo box for team entry that exists alongside the text input. Text input will be labeled as only for use for a new team to be added to the database.
-- HTML form validation to require all empty player textboxes to be filled.
+- Proper form validation to require date entry, team entry, and all empty player textboxes to be filled. This will be implemented using jQuery.
+- Photo upload link next to each player entry textbox. Player photo will be displayed to the user if the user clicks on the player name in the displayPlayers.php webpage.
