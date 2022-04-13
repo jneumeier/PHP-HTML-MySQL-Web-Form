@@ -20,7 +20,7 @@ How To Run:
 About This Program:
 *********************
 
-This is a web form that saves entries with PHP and MySQL, and displays the entries to the user with PHP in conjunction with MySQL database calls. JavaScript JQuery is used to make the main form dynamic.
+This is a web form that saves entries with PHP and MySQL, and displays the entries to the user with PHP in conjunction with MySQL database calls. JavaScript jQuery is used to make the main form dynamic.
 
 
 *********************
